@@ -1,4 +1,4 @@
-# holbertonschool-low_level_programming
+# Holbertonschool low level programming
 > Repository of Low level programming in Holberton
 
 welcome
