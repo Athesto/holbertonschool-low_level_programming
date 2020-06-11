@@ -2,6 +2,7 @@
 
 /**
  * main - 6-Sizeof
+ *
  * Description: Print the size of multi vars
  * Return: 0
  */
