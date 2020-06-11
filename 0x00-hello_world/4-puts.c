@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  * main - 4-put
- * @parameterx: x
+ *
  * Description:
  * Return:  0 ok
  */
