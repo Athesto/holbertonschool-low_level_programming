@@ -1,0 +1,7 @@
+#!/bin/bash
+clear
+betty $1
+gcc -Wall -Werror -Wextra -pedantic $1 
+echo 
+./a.out
+echo
