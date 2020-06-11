@@ -12,9 +12,9 @@ int main(void)
 {
 		int n;
 
-			srand(time(0));
-				n = rand() - RAND_MAX / 2;
-					/* your code goes there */
-					printf("%d is %s", n, n > 0 ? "positive" : "negative");
-					return (0);
+		srand(time(0));
+		n = rand() - RAND_MAX / 2;
+		/* your code goes there */
+		printf("%d is %s", n, n > 0 ? "positive" : "negative");
+		return (0);
 }
