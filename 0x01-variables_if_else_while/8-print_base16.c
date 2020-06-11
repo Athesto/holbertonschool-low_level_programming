@@ -11,7 +11,7 @@ int main(void)
 
 	for (n = 0 ; n < 16 ; n++)
 	{
-		putchar(n + (n < 10 ? '0' : -10 + 'A')); 
+		putchar(n + (n < 10 ? '0' : -10 + 'A'));
 	}
 	return (0);
 }
