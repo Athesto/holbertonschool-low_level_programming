@@ -23,7 +23,7 @@ int main(void)
 					putchar(' ');
 					putchar('0' + k);
 					putchar('0' + l);
-					if (1)
+					if (10 * i + j < 98)
 					{
 						putchar(',');
 						putchar(' ');
