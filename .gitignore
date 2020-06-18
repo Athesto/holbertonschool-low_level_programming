@@ -4,3 +4,4 @@
 *.s
 *.out
 checker
+*-main.c
