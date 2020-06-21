@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
  * print_number - print a number
  * @n: input value
@@ -6,7 +7,7 @@
 void print_number(int n)
 {
 	int tens = 1;
-	int tmp;
+	unsigned int tmp;
 
 	if (n < 0)
 	{
@@ -14,10 +15,14 @@ void print_number(int n)
 		n = -n;
 	}
 	tmp = n;
+	if (n == INT_MIN)
+	{
+		tmp++;
+	}
 	while (tmp > 9)
 	{
-		tens *= 10;
-		tmp /= 10;
+		tens = tens * 10;
+		 tmp = tmp / 10;
 	}
 
 	tmp = n;
