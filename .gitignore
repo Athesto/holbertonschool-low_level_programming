@@ -5,3 +5,4 @@
 *.out
 checker
 *-main.c
+*.swp
