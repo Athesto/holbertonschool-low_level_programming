@@ -8,29 +8,21 @@ void rev_string(char *s)
 {
 	char c;
 	int len = 0;
+	char *p0 = s;
 
-/*
-	*while (*s)
+	while (*s)
 	{
+		len++;
 		s++;
-		len++;
 	}
-*/
-	do
-		++len;
-	while (*++s);
-
-	printf("%d, %c\n", len, *s);
-	return;
-	while (*s > 5)
+	s--;
+	while (p0 != s)
 	{
-		c = *s;
-		printf("<%c>", c);
-		*s = *(s - len);
-		*(s - len) = c;
+		c = *p0;
+		*p0 = *s;
+		*s = c;
+		p0++;
 		s--;
-		len++;
 	}
-	printf("\n");
 }
 
