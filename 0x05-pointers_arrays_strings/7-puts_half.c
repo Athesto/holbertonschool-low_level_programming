@@ -5,16 +5,16 @@
  */
 void puts_half(char *str)
 {
-	int len = 0, n = 0;
+	int len = 0, half = 0;
 
 	while (*(str + len))
 		len++;
+	len--;
 	if (len % 2 == 0)
-		n = len / 2;
+		half = len / 2;
 	else
-		n = (len - 1) / 2;
-	while (*(str + n))
-		_putchar(*(str + n++));
+		half = (len - 1) / 2;
+	while (*(str + half))
+		_putchar(*(str + half++));
 	_putchar('\n');
-	/*printf("%d", len);*/
 }
