@@ -10,7 +10,8 @@ void print_array(int *array, int n)
 
 	for (i = 0; i < n; i++)
 	{
-		printf("%d%s", *(array + i), i < n - 1 ? ", " : "\n");
+		printf("%d%s", *(array + i), i < n - 1 ? ", " : "");
 	}
+	printf("\n");
 }
 
