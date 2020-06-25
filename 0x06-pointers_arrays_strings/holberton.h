@@ -1,5 +1,6 @@
 #ifndef _HOLBERTON_H_
 #define _HOLBERTON_H_
+#include <stdio.h>
 char *_strcat(char *dest, char *src); /*0.0*/
 char *_strncat(char *dest, char *src, int n);/*1.1*/
 char *_strncpy(char *dest, char *src, int n);/*2.2*/
@@ -13,5 +14,5 @@ void print_number(int n);/*9.100*/
 /*magic*//*10.101*/
 char *infinite_add(char *n1, char *n2, char *r, int size_r);/*11.102*/
 void print_buffer(char *b, int size);/*12.103*/
-
+int _putchar(char c);
 #endif /*_HOLBERTON_H_*/
