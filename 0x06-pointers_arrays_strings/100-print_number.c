@@ -15,17 +15,15 @@ void print_number(int n)
 	}
 	nabs =  (unsigned int)n;
 
-	while (nabs / zeros >= 10)
+	while (nabs / zeros > 9)
 	{
 		zeros *= 10;
 	}
-	do {
+	while (zeros)
+	{
 		_putchar('0' + nabs / zeros);
 		nabs %= zeros;
 		zeros /= 10;
-	} while (nabs);
-
-
-
+	}
 }
 
