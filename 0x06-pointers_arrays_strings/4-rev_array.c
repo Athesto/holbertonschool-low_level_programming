@@ -7,13 +7,13 @@
  */
 void reverse_array(int *a, int n)
 {
+
 	while (n)
 	{
-		printf("%i", a[n]);
-		if (n > 1)
-			printf(", ");
-		else
-			printf("\n");
 		n--;
+		printf("%i", a[n]);
+		if (n)
+			printf(", ");
 	}
+	printf("\n");
 }
