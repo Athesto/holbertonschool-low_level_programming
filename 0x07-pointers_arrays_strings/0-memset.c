@@ -1,3 +1,4 @@
+#include "holberton.h"
 /**
  * _memset - main
  * @s: output pointer
@@ -11,5 +12,5 @@ char *_memset(char *s, char b, unsigned int n)
 
 	while (n--)
 		*ps++ = b;
-	return (ps);
+	return (s);
 }
