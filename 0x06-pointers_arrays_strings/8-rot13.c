@@ -1,3 +1,4 @@
+#include "holberton.h"
 /**
  * rot13 - description
  * @str: string
@@ -5,5 +6,23 @@
  */
 char *rot13(char *str)
 {
+	char *keysrc = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWZYZ";
+	char *keydst = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJMLM";
+	int i, carry = 0, keylen = 0;
+
+	while (keysrc[keylen])
+		keylen++;
+	keylen--;
+
+	while (str[carry])
+	{
+		for (i = 0; i < keylen; i++)
+			if (str[carry] == keysrc[i])
+			{
+				str[carry] = keydst[i];
+				break;
+			}
+		carry++;
+	}
 	return (str);
 }
