@@ -1,4 +1,3 @@
-#include <stdio.h>
 /**
  * _strchr - find char
  * @s: source
@@ -15,6 +14,8 @@ char *_strchr(char *s, char c)
 			return (ptr);
 		ptr++;
 	}
-	ptr = NULL;
-	return (ptr);
+	if (*ptr == c)
+		return (ptr);
+	else
+		return (((void *)0));
 }
