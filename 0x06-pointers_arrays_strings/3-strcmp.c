@@ -7,6 +7,11 @@
  */
 int _strcmp(char *s1, char *s2)
 {
-	printf("%s, %s\n", s1, s2);
-	return (0);
+	int dif = 0;
+
+	while (dif == 0 && *s1 && *s2)
+	{
+		dif = (*s1++) - (*s2++);
+	}
+	return (dif);
 }
