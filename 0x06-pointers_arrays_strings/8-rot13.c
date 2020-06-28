@@ -6,13 +6,12 @@
  */
 char *rot13(char *str)
 {
-	char *keysrc = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWZYZ";
-	char *keydst = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJMLM";
+	char *keysrc = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char *keydst = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 	int i, carry = 0, keylen = 0;
 
 	while (keysrc[keylen])
 		keylen++;
-	keylen--;
 
 	while (str[carry])
 	{
