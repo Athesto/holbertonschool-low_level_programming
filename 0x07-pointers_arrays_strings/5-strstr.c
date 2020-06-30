@@ -11,11 +11,11 @@ char *_strstr(char *haystack, char *neddle)
 	int i = 0;
 
 	if (*neddle == '\0')
-		return (0);
+		return (NULL);
 
-	while (1)
+	while (*ps)
 	{
-		if (*(ps + i) == *(neddle + i))
+		if (ps[i] == neddle[i])
 		{
 			i++;
 		}
@@ -26,8 +26,6 @@ char *_strstr(char *haystack, char *neddle)
 		}
 		if (neddle[i] == '\0')
 			return (ps);
-		if (ps == '\0')
-			break;
 	}
-	return (0);
+	return (NULL);
 }
