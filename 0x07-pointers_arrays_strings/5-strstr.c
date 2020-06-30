@@ -11,7 +11,7 @@ char *_strstr(char *haystack, char *neddle)
 	int i = 0;
 
 	if (*neddle == '\0')
-		return (0);
+		return (ps);
 
 	while (*ps)
 	{
