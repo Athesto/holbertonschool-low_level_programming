@@ -8,7 +8,7 @@
  */
 int main(int argc, char **argv)
 {
-	unsigned int cents = 0, i, change;
+	int cents = 0, i, change;
 	const int coins[] = {25, 10, 5, 2, 1};
 
 	if (argc != 2)
@@ -17,8 +17,10 @@ int main(int argc, char **argv)
 		return (1);
 	}
 	change = atoi(*(argv + 1));
+	if (change < 0)
+		change = 0;
 	i = 0;
-	while (i < sizeof(coins) / sizeof(coins[0]))
+	while (i < (int)(sizeof(coins) / sizeof(coins[0])))
 	{
 		if (change / coins[i] > 0)
 		{
