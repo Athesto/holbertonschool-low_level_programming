@@ -9,7 +9,7 @@
  */
 int main(int argc, char *argv[])
 {
-	long out = 0;
+	int out = 0;
 	int i;
 
 	while (--argc)
@@ -17,15 +17,15 @@ int main(int argc, char *argv[])
 		argv++;
 		for (i = 0; (*argv)[i]; i++)
 		{
-			if (!isdigit(*argv[i]))
+			if (!isdigit((*argv)[i]))
 			{
-				printf("Error %c\n", *argv[i]);
+				printf("Error");
 				return (1);
 			}
 		}
 		out += atoi(*argv);
 	}
-	printf("%ld\n", out);
+	printf("%d\n", out);
 	return (0);
 
 }
