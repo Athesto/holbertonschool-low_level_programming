@@ -1,7 +1,7 @@
 /**
- * _sqrt_recursion - return square
- * @n: input
- * Return: int
+ * _sqrt_recursion - return square root of input (n)
+ * @n: integer to sqrt
+ * Return: sqrt of integer, -1 if (n) has no sqrt
  */
 
 int _sqrt_recursion(int n)
