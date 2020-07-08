@@ -7,10 +7,12 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	char *p;
+	char *p = "";
 	int len1 = 0, len2 = 0;
 	int i;
 
+	if (!s1)
+		s1 = p;
 	while (*(s1 + len1))
 		len1++;
 	while (*(s2 + len2))
