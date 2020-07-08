@@ -8,11 +8,14 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *p = "";
+	char *empty = "";
 	int len1 = 0, len2 = 0;
 	int i;
 
 	if (!s1)
 		s1 = p;
+	if (!s2)
+		s2 = empty;
 	while (*(s1 + len1))
 		len1++;
 	while (*(s2 + len2))
