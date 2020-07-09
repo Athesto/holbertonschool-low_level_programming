@@ -1,3 +1,4 @@
+#include "holberton.h"
 /**
  * string_nconcat- function that concatenates two strings.
  * @s1: destiny
@@ -7,8 +8,29 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	if (n)
-		return (s1);
+	char *p;
+	int i;
+
+	if (!s1)
+		s1 = "";
+	if (!s2)
+		s2 = "";
+
+	if (n >= strlen(s2))
+		p = malloc(strlen(s1) + strlen(s2) + 1); /*+1 por '\0'*/
 	else
-		return (s2);
+		p = malloc(strlen(s1) + n + 1);
+	if (!p)
+		return (NULL);
+
+	i = 0;
+	while (s1[i])
+	{
+		p[i] = s1[i];
+		i++;
+	}
+	while (*s2)
+		p[i++] = *s2++;
+	p[i] = '\0';
+	return (p);
 }
