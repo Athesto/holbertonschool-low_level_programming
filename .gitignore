@@ -6,3 +6,4 @@
 checker
 *-main.c
 *.swp
+tmp
