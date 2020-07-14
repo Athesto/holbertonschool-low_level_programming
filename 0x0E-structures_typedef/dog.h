@@ -18,4 +18,5 @@ typedef struct dog dog_t;
 dog_t *new_dog(char *name, float age, char *owner);
 void free_dog(dog_t *d);
 int _putchar(char c);
+int _strlen(char *s);
 #endif /* _DOG_H_ */
