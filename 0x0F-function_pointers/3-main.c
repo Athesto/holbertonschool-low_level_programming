@@ -12,12 +12,12 @@ int main(int c, char *v[])
 	int result, a, b;
 	int (*p_result)();
 
-	if (c == 4 && strlen(v[2]) == 1)
+	if (c == 4)
 	{
 		a = atoi(v[1]);
 		b = atoi(v[3]);
 		p_result = get_op_func(v[2]);
-		if (p_result)
+		if (p_result && strlen(v[2]) == 1)
 		{
 			if (!((*v[2] == '/' || *v[2] == '%') && b == 0))
 			{
