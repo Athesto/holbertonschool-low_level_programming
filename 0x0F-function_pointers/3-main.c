@@ -17,7 +17,7 @@ int main(int c, char *v[])
 		printf("Error\n");
 		return (0);
 	}
-	result= get_op_func(v[2]);
+	p_result = get_op_func(v[2]);
 
 	if (p_result)
 		result = p_result(atoi(v[1]), atoi(v[3]));
