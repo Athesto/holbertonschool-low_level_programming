@@ -8,7 +8,7 @@
  * perform the operation asked by the user
  * Return: pointer to the operation
  */
-int (*get_op_func(char *s))(int a, int b)
+int (*get_op_func(char *s))(int, int)
 {
 
 	int i;
