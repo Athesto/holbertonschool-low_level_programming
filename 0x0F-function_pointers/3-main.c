@@ -26,6 +26,6 @@ int main(int c, char *v[])
 			}
 	}
 	printf("Error\n");
-	return (1);
+	return (0);
 
 }
