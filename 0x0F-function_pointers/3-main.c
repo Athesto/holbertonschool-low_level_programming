@@ -9,21 +9,23 @@
  */
 int main(int c, char *v[])
 {
-	int result;
+	int result, a, b;
 	int (*p_result)();
 
-	if (c != 4 || strlen(v[2]) != 1)
+	if (c == 4 && strlen(v[2]) == 1)
 	{
+		a = atoi(v[1]);
+		b = atoi(v[3]);
+		p_result = get_op_func(v[2]);
+		if (p_result)
+			if (!(*v[2] == '/' && b == 0))
+			{
+				result = p_result(a, b);
+				printf("%d\n", result);
+				return (0);
+			}
+	}
 		printf("Error\n");
 		return (1);
-	}
-	p_result = get_op_func(v[2]);
 
-	if (p_result)
-		result = p_result(atoi(v[1]), atoi(v[3]));
-	else
-		return (1);
-	printf("%d\n", result);
-
-	return (0);
 }
