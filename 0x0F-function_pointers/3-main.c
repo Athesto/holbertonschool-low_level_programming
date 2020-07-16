@@ -15,14 +15,14 @@ int main(int c, char *v[])
 	if (c != 4 || strlen(v[2]) != 1)
 	{
 		printf("Error\n");
-		return (0);
+		return (1);
 	}
 	p_result = get_op_func(v[2]);
 
 	if (p_result)
 		result = p_result(atoi(v[1]), atoi(v[3]));
 	else
-		return (0);
+		return (1);
 	printf("%d\n", result);
 
 	return (0);
