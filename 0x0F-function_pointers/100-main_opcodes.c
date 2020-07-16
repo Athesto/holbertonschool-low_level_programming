@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * main - prints the opcodes of its own main function.
  * @argc: counter
@@ -8,10 +9,11 @@
 int main(int argc, char *argv[])
 {
 	int i;
+
 	if (argc == 2)
 	{
 		i = atoi(argv[1]);
-		if( i >= 0)
+		if (i >= 0)
 		{
 			printf("\n");
 			return (0);
