@@ -9,13 +9,12 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	unsigned int i;
 	va_list lista;
 
-	if (!separator)
+	va_start(lista, n);
+	for (i = 0; i < n; i++)
 	{
-		va_start(lista, n);
-		for (i = 0; i < n; i++)
-		{
-			printf("%d%s", va_arg(lista, int), (i < (n - 1)) ? separator : "\n");
-		}
-		va_end(lista);
+		printf("%d", va_arg(lista, int));
+		if (separator)
+			printf("%s", (i < (n - 1)) ? separator : "\n");
 	}
+	va_end(lista);
 }
