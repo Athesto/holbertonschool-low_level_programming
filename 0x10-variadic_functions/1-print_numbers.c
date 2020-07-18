@@ -14,7 +14,8 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	{
 		printf("%d", va_arg(lista, int));
 		if (separator)
-			printf("%s", (i < (n - 1)) ? separator : "\n");
+			printf("%s", separator);
 	}
+	printf("\n");
 	va_end(lista);
 }
