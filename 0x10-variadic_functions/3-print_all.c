@@ -7,11 +7,13 @@ void print_all(const char * const format, ...)
 {
 	va_list ap;
 	const char *pformat = format;
-	int d;
 	char c, *s;
 
 	while (!format)
+	{
+		printf("\n");
 		return;
+	}
 	va_start(ap, format);
 	while (*pformat)
 	{
@@ -31,8 +33,7 @@ void print_all(const char * const format, ...)
 				printf("%s", s);
 				break;
 			case 'i':              /* int */
-				d = va_arg(ap, int);
-				printf("%d", d);
+				printf("%d", va_arg(ap, int));
 				break;
 			case 'f':              /* float */
 				printf("%f", va_arg(ap, double));
@@ -43,6 +44,5 @@ void print_all(const char * const format, ...)
 		if (*(pformat))
 			printf(", ");
 	}
-	va_end(ap);
-	printf("\n");
+	va_end(ap), printf("\n");
 }
