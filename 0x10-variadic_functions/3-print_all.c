@@ -8,7 +8,7 @@ void print_all(const char * const format, ...)
 	va_list ap;
 	const char *pformat = format;
 	char c, *s;
-	
+
 	va_start(ap, format);
 	while (format && *pformat)
 	{
@@ -39,6 +39,6 @@ void print_all(const char * const format, ...)
 		if (*(pformat))
 			printf(", ");
 	}
-	va_end(ap)
+	va_end(ap);
 	printf("\n");
 }
