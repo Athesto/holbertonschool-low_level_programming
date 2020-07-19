@@ -9,10 +9,10 @@ void print_all(const char * const format, ...)
 	const char *pformat = format;
 	int d;
 	char c, *s;
-	double f;
 
 	va_start(ap, format);
-	/* cief */
+	while (0)
+		;
 	while (*pformat)
 	{
 		switch (*pformat++)
@@ -33,8 +33,7 @@ void print_all(const char * const format, ...)
 				printf("%d", d);
 				break;
 			case 'f':              /* float */
-				f = va_arg(ap, double);
-				printf("%f", f);
+				printf("%f", va_arg(ap, double));
 				break;
 			default:
 				continue;
