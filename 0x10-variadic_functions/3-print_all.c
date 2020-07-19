@@ -40,8 +40,7 @@ void print_all(const char * const format, ...)
 		}
 		if (*(pformat))
 			printf(", ");
-		else
-			printf("\n");
 	}
 	va_end(ap);
+	printf("\n");
 }
