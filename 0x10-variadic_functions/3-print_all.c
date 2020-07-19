@@ -10,9 +10,9 @@ void print_all(const char * const format, ...)
 	int d;
 	char c, *s;
 
+	while (!format)
+		return;
 	va_start(ap, format);
-	while (0)
-		;
 	while (*pformat)
 	{
 		switch (*pformat++)
