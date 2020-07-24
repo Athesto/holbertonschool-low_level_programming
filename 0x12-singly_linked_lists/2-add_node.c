@@ -4,10 +4,10 @@
 /**
  * add_node - Add node to the list
  * @head: head of list
- * @str: new str
- * Return: 0
+ * @str: str to new
+ * Return: pointer to added structure
  */
-list_t *add_node(list_t *head[], const char *str)
+list_t *add_node(list_t **head, const char *str)
 {
 	list_t *new;
 
