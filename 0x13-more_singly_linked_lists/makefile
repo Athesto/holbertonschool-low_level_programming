@@ -2,9 +2,8 @@ flags=-g -Wall -Wextra -Werror -pedantic
 headers=lists.h
 
 %:
-	clear
 	betty $(headers) $(files)
-	@gcc $(flags) $(files)
+	gcc $(flags) $(files)
 	./a.out
 
 0: files=0-main.c 0-print_listint.c
@@ -22,4 +21,3 @@ headers=lists.h
 101: files=101-main.c 2-add_nodeint.c 101-print_listint_safe.c
 102: files=102-main.c 2-add_nodeint.c 101-print_listint_safe.c 102-free_listint_safe.c
 103: files=103-main.c 2-add_nodeint.c 101-print_listint_safe.c 102-free_listint_safe.c 103-find_loop.c
-
