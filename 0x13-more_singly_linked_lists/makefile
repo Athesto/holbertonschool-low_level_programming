@@ -4,7 +4,7 @@ headers=lists.h
 %:
 	clear
 	betty $(headers) $(files)
-	gcc $(flags) $(files)
+	@gcc $(flags) $(files)
 	./a.out
 
 0: files=0-main.c 0-print_listint.c
