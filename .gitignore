@@ -7,3 +7,4 @@ checker
 *-main.c
 *.swp
 tmp
+.vscode
