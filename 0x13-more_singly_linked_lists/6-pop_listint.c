@@ -10,8 +10,7 @@ int pop_listint(listint_t **head)
 	listint_t *tmp;
 	int n = 0;
 
-	/* check if head exist and
-	 * check if it's pointing to something*/
+	/* check if head exist and check if it's pointing to something*/
 	if (head && *head)
 	{
 		tmp = *head;	/* set a backup */
