@@ -8,14 +8,19 @@
  */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	if (head)
+	while (head && index)
 	{
-		while (index)
-		{
-			head = head->next;
-			index--;
-		}
-		return (head);
+		head = head->next;
+		index--;
 	}
-	return (NULL);
+	return (head);
 }
+
+/*
+ * form 2
+ * {
+ *	for (;head && index; index--)
+ *		head = head->next;
+ *	return (head);
+ * }
+ */
