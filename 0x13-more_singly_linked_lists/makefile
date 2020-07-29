@@ -6,6 +6,12 @@ headers=lists.h
 	gcc $(flags) $(files)
 	./a.out
 
+clear:
+	clear;
+
+valgrind:
+	valgrind ./a.out
+
 0: files=0-main.c 0-print_listint.c
 1: files=1-main.c 1-listint_len.c
 2: files=2-main.c 2-add_nodeint.c 0-print_listint.c
