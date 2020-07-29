@@ -24,7 +24,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 			{
 				new->next = *head;
 				*head = new;
-				return (*head);
+				return (new);
 			}
 
 			/* include otherwise */
@@ -35,11 +35,12 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 				{
 					new->next = ptr->next;
 					ptr->next = new;
-					return (*head);
+					return (new);
 				}
 				ptr = ptr->next;
 			}
 			free(new);
+			return (NULL);
 		}
 		return (NULL);
 	}
