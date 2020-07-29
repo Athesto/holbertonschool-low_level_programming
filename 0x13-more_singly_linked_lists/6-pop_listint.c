@@ -7,14 +7,17 @@
  */
 int pop_listint(listint_t **head)
 {
-	if (*head)
-	{
-		listint_t *tmp = *head;
-		int n = tmp->n;
+	listint_t *tmp;
+	int n = 0;
 
+	/* check if head exist and
+	 * check if it's pointing to something*/
+	if (head && *head)
+	{
+		tmp = *head;	/* set a backup */
+		n = tmp->n;
 		*head = (*head)->next;
 		free(tmp);
-		return (n);
 	}
-	return (0);
+	return (n);
 }
