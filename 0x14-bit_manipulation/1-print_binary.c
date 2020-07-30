@@ -1,6 +1,5 @@
 #include "holberton.h"
-#define INT_BITS (8 * 4)
-
+#define LONG_BITS (sizeof(long int) * 8)
 /**
  * print_binary - print binary format
  * @n: number
@@ -11,7 +10,7 @@ void print_binary(unsigned long int n)
 	int b, b_idx;
 	unsigned int MSB1 = 0;
 
-	for (b_idx = INT_BITS; b_idx >= 1; b_idx--)
+	for (b_idx = LONG_BITS; b_idx >= 1; b_idx--)
 	{
 		b = n >> (b_idx - 1);
 		b = b & 1;
