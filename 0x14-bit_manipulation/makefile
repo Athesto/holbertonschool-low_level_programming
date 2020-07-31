@@ -9,7 +9,11 @@ headers=holberton.h
 clear:
 	clear;
 
+gdb:
+	gdb ./a.out
+
 valgrind:
 	valgrind ./a.out
 
 %: files=$*-*.c
+1: files=1-*.c _putchar.c
