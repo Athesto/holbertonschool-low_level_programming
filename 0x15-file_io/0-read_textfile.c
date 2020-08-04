@@ -21,14 +21,13 @@ ssize_t read_textfile(const char *filename, size_t letters)
 			if (buf)
 			{
 				o_read = read(fd, buf, letters);
-				if (o_read != -1)
-					o_write = write(1, buf, o_read);
+				o_write = write(1, buf, o_read);
 				free(buf);
 			}
 			close(fd);
 		}
 	}
-	if (fd == -1 || o_read == -1 || o_write == -1)
+	if (!filename || fd == -1 || o_read == -1 || o_write == -1)
 		return (0);
 	return (o_write);
 }
