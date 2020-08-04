@@ -1,5 +1,4 @@
 #include "holberton.h"
-
 /**
  * read_textfile - read a file and print it in stdout
  * @filename: path of file
@@ -17,7 +16,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	fd = open(filename, O_RDONLY);
 	o_read = read(fd, buf, letters);
-	o_write = write(1, buf, o_read);
+	o_write = write(STDOUT_FILENO, buf, o_read);
 	close(fd);
 
 	if (fd == -1 || o_read == -1 || o_write == -1)
