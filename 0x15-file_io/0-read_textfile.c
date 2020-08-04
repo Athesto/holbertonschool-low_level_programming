@@ -17,10 +17,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		fd = open(filename, O_RDONLY);
 		for (i = 0; i < letters && fd > 2; i++)
 		{
-			if (!read(fd, &c, 1))
+			if (read(fd, &c, 1) < 1)
 				break;
-			write(1, &c, 1);
+			if (write(1, &c, 1) < 1)
+				break;
 		}
 	}
+	close(fd);
 	return (i);
 }
