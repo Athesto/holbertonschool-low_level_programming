@@ -16,12 +16,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 
 	fd = open(filename, O_RDONLY);
-	if (fd != -1)
-	{
-		o_read = read(fd, buf, letters);
-		o_write = write(1, buf, o_read);
-		close(fd);
-	}
+	o_read = read(fd, buf, letters);
+	o_write = write(1, buf, o_read);
+	close(fd);
 
 	if (fd == -1 || o_read == -1 || o_write == -1)
 		return (free(buf), 0);
