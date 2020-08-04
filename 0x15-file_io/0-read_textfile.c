@@ -18,16 +18,13 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		if (buf)
 		{
 			fd = open(filename, O_RDONLY);
-			if (fd != -1)
-			{
-				o_read = read(fd, buf, letters);
-				o_write = write(1, buf, o_read);
-				close(fd);
-			}
+			o_read = read(fd, buf, letters);
+			o_write = write(1, buf, o_read);
 			free(buf);
+			close(fd);
 		}
 	}
-	if (!filename || fd == -1 || !buf || o_read == -1 || o_write == -1)
+	if (!filename || !buf || fd == -1 || o_read == -1 || o_write == -1)
 		return (0);
 	return (o_write);
 }
