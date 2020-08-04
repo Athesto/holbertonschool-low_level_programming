@@ -27,7 +27,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 			close(fd);
 		}
 	}
-	if (!filename || fd == -1 || o_read == -1 || o_write == -1)
+	if (!filename || fd == -1 || !buf || o_read == -1 || o_write == -1)
 		return (0);
 	return (o_write);
 }
