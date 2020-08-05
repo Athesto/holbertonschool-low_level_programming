@@ -12,14 +12,11 @@ int main(int argc, char *argv[])
 	int fd1, fd2, f_close, f_read = -1, f_write = -1;
 	char buf[BUF1024];
 
-	/* check command input */
 	if (argc != 3)
 	{
-		printf("Usage: cp file_from file_to\n");
+		dprintf(ERR, "Usage: cp file_from file_to\n");
 		return (97);
 	}
-
-	/* check files */
 	fd1 = open(argv[1], O_RDONLY);
 	if (fd1 == -1)
 	{
@@ -41,12 +38,13 @@ int main(int argc, char *argv[])
 	while (f_read)
 	{
 		f_read = read(fd1, buf, BUF1024);
-		f_write = write(STDOUT_FILENO, buf, f_read);
+		f_write = write(fd2, buf, f_read);
 	}
 	if (f_write == -1)
 	{
 		dprintf(ERR, "Error: Can't write to %s\n", argv[2]);
 		return (99);
 	}
+	close(fd1), close(fd2);
 	return (0);
 }
