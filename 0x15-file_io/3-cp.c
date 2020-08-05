@@ -1,5 +1,5 @@
 #include "holberton.h"
-#define BUF1024 (1024)
+#define BUF1024 (2048)
 #define ERR STDERR_FILENO
 int retError(int val, char *filename);
 /**
