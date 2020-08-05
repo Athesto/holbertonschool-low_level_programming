@@ -1,5 +1,6 @@
 #include "holberton.h"
 #define BUF1024 (1024)
+#define ERR STDERR_FILENO
 /**
  * main - cp program
  * @argc: argument counter
@@ -22,7 +23,7 @@ int main(int argc, char *argv[])
 	fd1 = open(argv[1], O_RDONLY);
 	if (fd1 == -1)
 	{
-		printf("Error: Can't read from file %s\n", argv[1]);
+		dprintf(ERR, "Error: Can't read from file %s\n", argv[1]);
 		return (98);
 	}
 	fd2 = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
@@ -31,7 +32,7 @@ int main(int argc, char *argv[])
 		f_close = close(fd1);
 		if (f_close == -1)
 		{
-			printf("Error: Can't close fd %d\n", fd1);
+			dprintf(ERR, "Error: Can't close fd %d\n", fd1);
 			return (100);
 		}
 		printf("Error: Can't write to %s\n", argv[2]);
@@ -44,7 +45,7 @@ int main(int argc, char *argv[])
 	}
 	if (f_write == -1)
 	{
-		printf("Error: Can't write to %s\n", argv[2]);
+		dprintf(ERR, "Error: Can't write to %s\n", argv[2]);
 		return (99);
 	}
 	return (0);
