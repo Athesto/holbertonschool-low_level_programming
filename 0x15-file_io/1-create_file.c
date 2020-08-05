@@ -8,7 +8,7 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int fd, len = 0, o_wr, isok = -1;
+	int fd, len = 0, o_wr = 0, isok = -1;
 
 	if (!filename)
 		return (isok);
@@ -20,10 +20,10 @@ int create_file(const char *filename, char *text_content)
 			while (text_content[len])
 				len++;
 			o_wr = write(fd, text_content, len);
-			if (o_wr != -1)
-				isok = 1;
 		}
 		close(fd);
+		if (o_wr != -1)
+			isok = 1;
 	}
 	return (isok);
 }
