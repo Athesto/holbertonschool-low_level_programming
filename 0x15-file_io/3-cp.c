@@ -27,15 +27,15 @@ int main(int argc, char *argv[])
 			return (retError(100, "3"));
 		return (retError(99, argv[2]));
 	}
-	while (f_read)
+	while (f_read > 0)
 	{
 		f_read = read(fd1, buf, BUF1024);
-		if (f_read == -1)
-			return (retError(98, argv[1]));
 		f_write = write(fd2, buf, f_read);
 		if (f_write == -1)
 			return (retError(99, argv[2]));
 	}
+	if (f_read == -1)
+		return (retError(98, argv[1]));
 	f_close = close(fd1);
 	if (f_close == -1)
 		return (retError(100, "3"));
