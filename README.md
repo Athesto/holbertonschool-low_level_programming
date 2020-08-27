@@ -2,5 +2,6 @@
 > Repository of Low level programming in Holberton
 welcome
 
-[x] hello  
-[ ] again
+
+ - [x] hello  
+ - [ ] again
