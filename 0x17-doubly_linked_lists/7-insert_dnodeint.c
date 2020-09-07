@@ -12,11 +12,9 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *runner; /* runner in the list */
 	unsigned int r_idx = 0; /* runner index */
 
-	/* check if it's a valid list*/
-	if (h)
+	if (h) /* check if it's a valid list*/
 	{
-		/* check if node has memory */
-		node = malloc(sizeof(*node));
+		node = malloc(sizeof(*node)); /* check if node has memory */
 		if (node)
 		{
 			node->prev = NULL;
@@ -34,15 +32,13 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			}
 			if (runner == NULL)
 			{
-				head = node;
+				*h = node;
 				return (node);
 			}
-			/* runner->next */
-			node->next = runner->next;
+			node->next = runner->next; /* runner->next */
 			node->prev = runner;
 			runner->next = node;
-			/* check if runner is not the last node */
-			if (node->next)
+			if (node->next) /* check if runner is not the last node */
 			{
 				runner = node->next;
 				runner->prev = node;
