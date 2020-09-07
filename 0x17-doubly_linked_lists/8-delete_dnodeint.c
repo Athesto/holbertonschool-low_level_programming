@@ -13,15 +13,13 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	/* check valid list */
 	if (head)
 	{
-		/* check empty list*/
-		if (!*head)
+		if (!*head) /* check empty list*/
 			return (-1);
 		runner = *head;
 		for (r_idx = 0; r_idx < index; r_idx++)
 		{
 			runner = runner->next;
-			/* Check if index > length list */
-			if (!runner)
+			if (!runner) /* Check if index > length list */
 				return (-1); /* ERROR */
 		}
 		/* alone */
