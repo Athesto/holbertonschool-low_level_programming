@@ -32,6 +32,11 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 					return (NULL); /* ERROR */
 				}
 			}
+			if (runner == NULL)
+			{
+				head = node;
+				return (node);
+			}
 			/* runner->next */
 			node->next = runner->next;
 			node->prev = runner;
