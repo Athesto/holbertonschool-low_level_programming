@@ -4,7 +4,6 @@
 *.s
 *.out
 checker
-*-main.c
 *.swp
 tmp
 .vscode
