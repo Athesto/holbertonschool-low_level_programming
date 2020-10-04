@@ -13,7 +13,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *node;
 
 	/* check a valid table and a valid key */
-	if (ht == NULL  || ht->array || key == NULL || value == NULL)
+	if (ht == NULL  || ht->array == NULL || key == NULL || value == NULL)
 		return (0);
 
 	node = malloc(sizeof(*node));
@@ -25,7 +25,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			node->value = strdup(value);
 			if (node->value) /* is a valid value */
 			{
-				hash_table_set_no_check(ht, node);
+				return (hash_table_set_no_check(ht, node));
 			}
 			free(node->key);
 			free(node);
