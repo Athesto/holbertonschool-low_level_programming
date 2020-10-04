@@ -55,7 +55,7 @@ int hash_table_set_no_check(hash_table_t *ht, hash_node_t *node)
 		node_checker = ht->array[h_idx];
 		while (node_checker)
 		{
-			if (strcmp(node_checker->key, node->key))
+			if (strcmp(node_checker->key, node->key) == 0)
 				return (0);
 			node_checker = node_checker->next;
 		}
