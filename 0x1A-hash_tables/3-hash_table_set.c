@@ -56,7 +56,10 @@ int hash_table_set_no_check(hash_table_t *ht, hash_node_t *node)
 		while (node_checker)
 		{
 			if (strcmp(node_checker->key, node->key) == 0)
-				return (0);
+			{
+				strcpy(node_checker->value, node->value);
+				return (1);
+			}
 			node_checker = node_checker->next;
 		}
 	}
