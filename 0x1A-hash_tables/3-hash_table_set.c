@@ -46,14 +46,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 int hash_table_set_no_check(hash_table_t *ht, hash_node_t *node)
 {
 	unsigned long int h_idx; /* hash table index */
-	hash_node_t *h_array; /* head in array */
 	hash_node_t *node_checker; /* head in array */
 
 	h_idx = key_index((const unsigned char *) node->key, ht->size);
-	h_array = ht->array[h_idx];
-	if (h_array) /* is a not  empty list */
+
+	if (ht->array[h_idx]) /* is a not  empty list */
 	{
-		node_checker = h_array;
+		node_checker = ht->array[h_idx];
 		while (node_checker)
 		{
 			if (strcmp(node_checker->key, node->key))
@@ -61,7 +60,7 @@ int hash_table_set_no_check(hash_table_t *ht, hash_node_t *node)
 			node_checker = node_checker->next;
 		}
 	}
-	node->next = h_array;
-	h_array = node;
+	node->next = ht->array[h_idx];
+	ht->array[h_idx] = node;
 	return (1);
 }
