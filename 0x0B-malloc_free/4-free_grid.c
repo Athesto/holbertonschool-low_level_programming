@@ -5,8 +5,11 @@
  */
 void free_grid(int **grid, int height)
 {
-	if (**grid && height)
-		return;
-	else
-		return;
+	int h_idx; /* height index */
+
+	for (int h_idx = 0; h_idx < height; h_idx++)
+	{
+		free(grid[h_idx]);
+	}
+	free(grid);
 }
