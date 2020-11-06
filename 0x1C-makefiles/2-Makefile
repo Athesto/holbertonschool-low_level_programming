@@ -1,0 +1,17 @@
+CC=gcc
+SRC=main.c holberton.c
+OBJ=$(SRC)
+NAME=holberton
+
+all: %.o
+	echo '-------------'
+	echo $<
+	echo $(OBJ)
+	echo $@
+	$(CC) -c -o $(OBJ) $(SRC)
+	$(CC) $(SRC) -o $(NAME)
+
+%.o: %.c
+	$(CC) $< -o $@
+
+
