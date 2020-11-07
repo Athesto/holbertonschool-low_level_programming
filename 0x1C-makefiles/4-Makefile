@@ -9,7 +9,7 @@ all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 %o: %c
-	gcc $(CFLAG)	-c -o $@  $^
+	$(CC) $(CFLAG)	-c -o $@  $^
 
 clean:
 	$(RM) -f *~ $(NAME)
