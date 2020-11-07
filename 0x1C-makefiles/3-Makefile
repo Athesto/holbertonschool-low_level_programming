@@ -2,19 +2,18 @@ CC=gcc
 SRC=main.c holberton.c
 OBJ=$(SRC:.c=.o)
 NAME=holberton
-RM=$(OBJ) $(NAME)
+RM=rm
 
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 clean:
-	rm -f *~ .*.swp $(NAME)
+	$(RM) -f *~ $(NAME)
 
 oclean:
-	rm -f $(OBJ)
+	$(RM) -f $(OBJ)
 
-fclean: oclean
-	rm -f *~ $(NAME)
+fclean: clean oclean
 
 re: oclean all
 
