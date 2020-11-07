@@ -12,10 +12,10 @@ def neighbours(grid, row, col):
         total += grid[row][col - 1]
     if row > 0:
         total += grid[row - 1][col]
-    if col < width:
-        total += grid[row + 1][col]
-    if row < height:
+    if col + 1 < width:
         total += grid[row][col + 1]
+    if row + 1 < height:
+        total += grid[row + 1][col]
     return total
 
 
