@@ -1,3 +1,12 @@
+int isEqual(char *s, char *last)
+{
+	if (*s != *last)
+		return (0);
+	if (s < last)
+		return (isEqual(s + 1, last - 1));
+	return (1);
+}
+
 /**
  * is_palindrome - is palindrome
  * @s: string
@@ -5,5 +14,9 @@
  */
 int is_palindrome(char *s)
 {
-	return (*s);
+	char *last = s;
+	while(*last)
+		last++;
+	last--;
+	return (isEqual(s, last));
 }
