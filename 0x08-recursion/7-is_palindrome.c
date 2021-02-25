@@ -1,9 +1,3 @@
-/**
- * isEqual - recursive equal
- * @s: initial pointer
- * @last: last pointer
- * Return: 1 is palindrome, 0 otherwise
- */
 int isEqual(char *s, char *last)
 {
 	if (*s != *last)
@@ -11,6 +5,18 @@ int isEqual(char *s, char *last)
 	if (s < last)
 		return (isEqual(s + 1, last - 1));
 	return (1);
+}
+/**
+ * getlen - is palindrome
+ * @s: string
+ * Return: int
+ */
+int getlen(char *s)
+{
+	int len = 0;
+	if (*s)
+		len = 1 + getlen(s+1);
+	return (len);
 }
 
 /**
@@ -20,10 +26,6 @@ int isEqual(char *s, char *last)
  */
 int is_palindrome(char *s)
 {
-	char *last = s;
-
-	while (*last)
-		last++;
-	last--;
+	char *last = s + getlen(s) - 1;
 	return (isEqual(s, last));
 }
